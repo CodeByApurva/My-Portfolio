@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gajendra's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    
+
+    body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at 25% 25%, #1a1a1a, #0f0f0f 80%);
+  background-attachment: fixed;
+  background-size: cover;
+  color: #ffffff;
+  overflow-x: hidden;
+  position: relative;
+}
+
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #0f0f0f;
+  z-index: -1;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: -50px;
+  left: -50px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255,65,77,0.15), transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+  filter: blur(80px);
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  bottom: -50px;
+  right: -50px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0,191,166,0.12), transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+  filter: blur(60px);
+}
+
+    nav {
+      position: fixed;
+      width: 100%;
+      padding: 1rem;
+      top: 0;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: center;
+      z-index: 1000;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 1.2rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ff414d;
+    }
+    header {
+      height: 100vh;
+      background: linear-gradient(to right, #1f1f1f, #2a2a2a);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+    header h1 {
+      font-size: 3rem;
+      color: #ff414d;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.3rem;
+      color: #bbbbbb;
+    }
+    section {
+      padding: 4rem 2rem;
+    }
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: #00bfa6;
+      margin-bottom: 2rem;
+    }
+    .projects, .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    max-width: 800px;
+    margin: auto;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      border-radius: 1rem;
+      padding: 2rem;
+      width: 280px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 12px rgba(255, 65, 77, 0.1);
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 25px rgba(255, 65, 77, 0.4);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1.4rem;
+      background: #00bfa6;
+      color: white;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+    a.button:hover {
+      transform: scale(1.05);
+      background: #029b88;
+    }
+    
+
+.skill {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.8rem 1.4rem;
+  border-radius: 999px;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #ffffff;
+  border: 1px solid #ff414d;
+  text-align: center;
+  white-space: nowrap;
+}
+
+    .about, .contact {
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+    }
+    .about p, .contact p {
+      font-size: 1.1rem;
+      color: #cccccc;
+    }
+    .contact-info {
+      margin-top: 1rem;
+      font-size: 1rem;
+      color: #ffffff;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: rgba(255, 255, 255, 0.02);
+      color: #777;
+    }
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      .card {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<div id="particles-js"></div>
+<nav>
+  <a href="#projects">Projects</a>
+  <a href="#skills">Skills</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<header>
+  <h1 data-aos="fade-down">Apurva Jaiswal</h1>
+  <p data-aos="fade-up"> Aspiring Computer Science Engineer<br>&<br>A Guy who is very eager to learn and try new things!</p>
+</header>
+
+<section id="projects">
+  <h2 data-aos="fade-up">Projects</h2>
+  <div class="projects">
+    <div class="card" data-aos="zoom-in">
+  <img src="https://source.unsplash.com/600x400/?code,developer" alt="Work in Progress" />
+  <h3>Project 1</h3>
+  <p>Work in Progress</p>
+  <a href="#" class="button" style="pointer-events: none; opacity: 0.6;">Coming Soon</a>
+</div>
+
+<div class="card" data-aos="zoom-in">
+  <img src="https://source.unsplash.com/600x400/?laptop,workspace" alt="Work in Progress" />
+  <h3>Project 2</h3>
+  <p>Work in Progress</p>
+  <a href="#" class="button" style="pointer-events: none; opacity: 0.6;">Coming Soon</a>
+</div>
+
+<div class="card" data-aos="zoom-in">
+  <img src="https://source.unsplash.com/600x400/?technology,dark" alt="Work in Progress" />
+  <h3>Project 3</h3>
+  <p>Work in Progress</p>
+  <a href="#" class="button" style="pointer-events: none; opacity: 0.6;">Coming Soon</a>
+</div>
+    </div>
+</section>
+
+<section id="skills">
+  <h2 data-aos="fade-up">Skills</h2>
+  <div class="skills" data-aos="fade-in">
+    <div class="skill">JAVA</div>
+    <div class="skill">C</div>
+    <div class="skill">C++</div>
+    <div class="skill">DSA</div>
+    <div class="skill">Python(basic)</div>
+    <div class="skill">HTML</div>
+    <div class="skill">CSS</div>
+    <div class="skill">JavaScript</div>
+    <div class="skill"> Generative AI</div>
+  </div>
+</section>
+
+<section id="about">
+  <h2 data-aos="fade-up">About Me</h2>
+  <p class="about" data-aos="fade-in">
+    I’m a curious and passionate Computer Science student who loves working along peers like me.I have alot of intrest in Artificial Intelligence and Machine Learning (AI/ML).<br><br>As we know the world is changing rapidly so we need to adapt to is as fast as possible,but good for me adaptibility is among my one of the best perks i can offer you.  
+  </p>
+</section>
+
+<section id\="contact">
+  <h2 data-aos="fade-up">Contact</h2>
+  <p class="contact" data-aos="fade-in">
+    Feel free to get in touch!
+  </p>
+  <div class="contact-info">
+    📧 <a href="mailto:apurvajaiswal2103@gmail.com" style="color: #00bfa6;">apurvajaiswal2103@gmail.com</a><br />
+    📞 <span style="color:#ff414d;">+91 9967831398</span>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Apurva Jaiswal. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+particlesJS('particles-js', {
+  particles: {
+    number: { value: 60, density: { enable: true, value_area: 800 } },
+    color: { value: ['#ff414d', '#00bfa6'] },
+    shape: { type: 'circle' },
+    opacity: { value: 0.5 },
+    size: { value: 3 },
+    line_linked: {
+      enable: true,
+      distance: 150,
+      color: "#ffffff",
+      opacity: 0.1,
+      width: 1
+    },
+    move: {
+      enable: true,
+      speed: 2,
+      direction: "none",
+      out_mode: "out"
+    }
+  },
+  interactivity: {
+    detect_on: "canvas",
+    events: {
+      onhover: { enable: true, mode: "repulse" },
+      onclick: { enable: true, mode: "push" },
+      resize: true
+    },
+    modes: {
+      repulse: { distance: 100, duration: 0.4 },
+      push: { particles_nb: 4 }
+    }
+  },
+  retina_detect: true
+});
+</script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1000, once: true });
+</script>
+
+</body>
+</html>
